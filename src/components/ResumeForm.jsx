@@ -14,12 +14,13 @@ import {
 } from "@material-tailwind/react";
 import { removeAll } from '../utils/localStorage';
 import { AlertTost } from './Alert';
+import { useNavigate } from 'react-router-dom';
 
 const ResumeForm = () => {
 
   const { resumeData, setResumeData, errors, nextPage } = useResume();
   const data = resumeData;
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setResumeData({ ...data, [name]: value });
@@ -358,7 +359,7 @@ const ResumeForm = () => {
                 />
               </svg>
             </Button>
-            <Button type="button" className=" bg-red-200 hover:bg-red-500" onClick={removeAll}>remove all</Button>
+            <Button type="button" className=" bg-red-200 hover:bg-red-500" onClick={() => { navigate('/create-resume'),removeAll()}}>remove all</Button>
           </div>
           </footer>
       </CardFooter>
