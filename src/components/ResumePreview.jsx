@@ -8,7 +8,7 @@ const ResumePreview = () => {
   const { resumeData, componentRef } = useResume();
 
   return (
-    <Card className="w-full sm:min-h-[70vh] pb-6 px-16" ref={componentRef}>
+    <Card className="w-full sm:min-h-[70vh] pb-6 px-16 shadow-none" ref={componentRef}>
       <div className='border-b-[1px] border-gray-500 w-full min-h-[12vh] py-2 mt-4'>
         <h3  className="uppercase text-black text-bold  sm:text-6">{resumeData? resumeData.fullname : ""}</h3>
         <h3 className='uppercase xl:text-[14px] '>{resumeData ? resumeData.job : "#"}</h3>
